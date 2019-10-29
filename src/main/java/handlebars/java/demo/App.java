@@ -56,11 +56,12 @@ public class App {
 
         String templateString = template.apply(context);
 
-        try (FileWriter fileWriter = new FileWriter(Paths.get(filePath, outputFile).toString())) {
+        String outputPath = Paths.get(filePath, outputFile).toString();
+        try (FileWriter fileWriter = new FileWriter(outputPath)) {
             fileWriter.write(templateString);
         }
 
-        System.out.println("File " + outputFile + " has been rendered.");
+        System.out.println("SUCCESS: File " + outputPath + " has been rendered.");
     }
 
     private static void registerHelpers(Handlebars handlebars) {

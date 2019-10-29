@@ -4,6 +4,11 @@ A list of all helpers that can be used in templates is available [here](https://
 
 In order for Helpers to be resolved, they need to be registered via `Handlebars.registerHelpers` method. See [App.java](src/main/java/handlebars/java/demo/App.java) and add more helpers as needed.
 
+## Requirements
+
+1. Java 8
+2. Maven
+
 ## Run
 
 1. Put your templates and json payloads within the `templates` folder.
@@ -16,5 +21,14 @@ payloadFile=template1.json
 outFile=renderedTemplate.html
 ```
 
-3. If you're using VSCode and Java plugin, just press F5 👌.
+3. If you're using VSCode and Java plugin, **just press F5** 👌. Or run:
+
+   ```
+   mvn package
+   ```
+
+   ```
+   mvn exec:java
+   ```
+
 4. The rendered file will be created with name equal to `outFile` inside `templatesPath` folder.
