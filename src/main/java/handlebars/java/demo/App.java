@@ -34,10 +34,10 @@ public class App {
         String payloadFile = props.getProperty("payloadFile");
         String outFile = props.getProperty("outFile");
 
-        apply(templatesPath, templateFile, payloadFile, outFile);
+        renderTemplate(templatesPath, templateFile, payloadFile, outFile);
     }
 
-    private static void apply(String templatesPath, String templateFile, String jsonFile, String outputFile)
+    private static void renderTemplate(String templatesPath, String templateFile, String jsonFile, String outputFile)
             throws IOException {
 
         String templateName = FilenameUtils.getBaseName(templateFile);
@@ -65,6 +65,8 @@ public class App {
     }
 
     private static void registerHelpers(Handlebars handlebars) {
+        // You can register more helpers here:
+
         handlebars.registerHelpers(ConditionalHelpers.class);
         // handlebars.registerHelpers(StringHelpers.class);
     }
